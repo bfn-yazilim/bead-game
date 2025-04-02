@@ -1,0 +1,24 @@
+<div class="game-container">
+  <div class="grid-container" [class.winning]="isWinning">
+    <div *ngFor="let item of gridItems; let i = index"
+         class="grid-item"
+         [ngClass]="{
+           'red': !item.isEmpty && item.color === 'red',
+           'blue': !item.isEmpty && item.color === 'blue',
+           'yellow': !item.isEmpty && item.color === 'yellow',
+           'green': !item.isEmpty && item.color === 'green',
+           'purple': !item.isEmpty && item.color === 'purple',
+           'empty': item.isEmpty,
+           'winning': isWinning
+         }"
+         (click)="onItemClick(i)">
+    </div>
+  </div>
+  <div class="win-overlay" *ngIf="isWinning">
+    <div class="win-message">
+      <h2>Tebrikler!</h2>
+      <p>Kazandınız!</p>
+      <button class="new-game-btn" (click)="startNewGame()">Yeni Oyun</button>
+    </div>
+  </div>
+</div>
