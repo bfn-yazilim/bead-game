@@ -2,6 +2,11 @@
 $grid-size: 5;
 $gap-size: 4px;
 
+body{
+  margin:0;
+  padding:0;
+}
+
 .game-container {
   position: relative;
   width: 100%;
@@ -22,6 +27,7 @@ $gap-size: 4px;
   position: relative;
   z-index: 1;
   transition: all 0.5s ease;
+  justify-content: center;
 
   &.winning {
     transform: scale(1.05);
@@ -34,7 +40,7 @@ $gap-size: 4px;
     aspect-ratio: 1;
     border-radius: 50%;
     transition: all 0.3s ease;
-    margin: 4px;
+    margin: 0px;
     border: 2px solid transparent;
 
     &::before {
